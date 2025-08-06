@@ -1,0 +1,162 @@
+{
+  "1": {
+    "inputs": {
+      "model_name": "bbox/animeNSFWDetection_v40\\ntd11_anime_nsfw_segm_v4_all.pt"
+    },
+    "class_type": "UltralyticsDetectorProvider",
+    "_meta": {
+      "title": "UltralyticsDetectorProvider"
+    }
+  },
+  "5": {
+    "inputs": {
+      "image": "ofchiresNormal_00014_.png"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "11": {
+    "inputs": {
+      "pixel_size": 13,
+      "strength": 100,
+      "feather": 0,
+      "mask_expansion": 20,
+      "color_mode": "median",
+      "interpolation": "nearest",
+      "blur_amount": 0,
+      "min_segment_size": 0,
+      "confidence_threshold": 0,
+      "preserve_edges": false,
+      "image": [
+        "5",
+        0
+      ],
+      "segs": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "MosaicSegs",
+    "_meta": {
+      "title": "Mosaic Effects (Advanced)"
+    }
+  },
+  "12": {
+    "inputs": {
+      "bbox_threshold": 0.33000000000000007,
+      "bbox_dilation": 0,
+      "crop_factor": 3,
+      "drop_size": 10,
+      "sub_threshold": 0.5,
+      "sub_dilation": 0,
+      "sub_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.4800000000000001,
+      "post_dilation": 0,
+      "bbox_detector": [
+        "1",
+        0
+      ],
+      "image": [
+        "5",
+        0
+      ],
+      "sam_model_opt": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ImpactSimpleDetectorSEGS",
+    "_meta": {
+      "title": "Simple Detector (SEGS)"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model_name": "sam_vit_b_01ec64.pth",
+      "device_mode": "AUTO"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "16": {
+    "inputs": {
+      "model_name": "bbox/penisDetection_v10\\penis.pt"
+    },
+    "class_type": "UltralyticsDetectorProvider",
+    "_meta": {
+      "title": "UltralyticsDetectorProvider"
+    }
+  },
+  "18": {
+    "inputs": {
+      "bbox_threshold": 0.5,
+      "bbox_dilation": 0,
+      "crop_factor": 3,
+      "drop_size": 10,
+      "sub_threshold": 0.5,
+      "sub_dilation": 0,
+      "sub_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.7,
+      "post_dilation": 0,
+      "bbox_detector": [
+        "16",
+        0
+      ],
+      "image": [
+        "11",
+        0
+      ],
+      "sam_model_opt": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "ImpactSimpleDetectorSEGS",
+    "_meta": {
+      "title": "Simple Detector (SEGS)"
+    }
+  },
+  "19": {
+    "inputs": {
+      "pixel_size": 9,
+      "strength": 100,
+      "feather": 0,
+      "mask_expansion": 10,
+      "color_mode": "median",
+      "interpolation": "nearest",
+      "blur_amount": 0,
+      "min_segment_size": 0,
+      "confidence_threshold": 0,
+      "preserve_edges": false,
+      "image": [
+        "11",
+        0
+      ],
+      "segs": [
+        "18",
+        0
+      ]
+    },
+    "class_type": "MosaicSegs",
+    "_meta": {
+      "title": "Mosaic Effects (Advanced)"
+    }
+  },
+  "20": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

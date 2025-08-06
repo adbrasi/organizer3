@@ -1,0 +1,36 @@
+# Super Image Processor v4.0 - Enhanced Edition
+# Core Dependencies
+
+# GUI Framework
+PySide6>=6.5.0
+
+# Image Processing
+Pillow>=10.0.0
+opencv-python>=4.9.0
+
+# Metadata Handling
+piexif>=1.1.0
+
+# Numerical Operations
+numpy>=1.24.0
+
+# Optional Dependencies for Enhanced Features
+# Uncomment if needed for future enhancements
+
+# Data Science (for future analytics features)
+# pandas>=1.5.0
+
+# Advanced Image Processing (for future filters)
+# scikit-image>=0.20.0
+
+# Machine Learning (for future AI features)
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# Development Dependencies (only for development)
+# pytest>=7.0.0
+# black>=23.0.0
+# flake8>=6.0.0
+
+# Build Dependencies
+# pyinstaller>=5.0.0
